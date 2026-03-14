@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Feedback | Online Feedback System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">OFS</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="feedback.html" class="active">Give Feedback</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="glass-container">
+            <h2 style="margin-bottom: 2rem; font-size: 2rem;">Share Your Experience</h2>
+            
+            <div id="formMessage" class="message"></div>
+
+            <div id="formContainer">
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" class="form-control" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Complaint">Complaint</option>
+                            <option value="Website Feedback">Website Feedback</option>
+                            <option value="Service Feedback">Service Feedback</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" required placeholder="Tell us what you think..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn" class="btn">Submit Feedback</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="successModal" style="display: none; text-align: center; padding: 2rem 0;">
+                <div class="success-icon">✓</div>
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Thank You!</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1.1rem;">Your feedback has been successfully submitted and helps us improve.</p>
+                <button onclick="resetFeedbackForm()" class="btn btn-secondary">Submit Another Feedback</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
